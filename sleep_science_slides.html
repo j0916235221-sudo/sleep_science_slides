@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>睡眠科學與作息調整指南｜LLM Wiki 教學簡報</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: #162032;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.14);
+      --green: #34d399;
+      --border: #26354d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    header {
+      padding: 16px 32px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .badge {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 940px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 44px 48px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.25s ease;
+    }
+    .slide.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--green);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+    h1 { font-size: 2.2rem; margin-bottom: 16px; line-height: 1.3; }
+    h2 { font-size: 1.75rem; margin-bottom: 18px; color: var(--accent); line-height: 1.3; }
+    p { font-size: 1.06rem; line-height: 1.75; color: #e2e8f0; margin-bottom: 14px; }
+    ul { margin-left: 22px; line-height: 1.85; font-size: 1.04rem; color: #e2e8f0; }
+    li { margin-bottom: 8px; }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+    }
+    .box {
+      background: rgba(11, 17, 32, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .box h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 8px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.98rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      text-align: left;
+      line-height: 1.5;
+    }
+    th {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+    }
+    .highlight {
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: rgba(52, 211, 153, 0.1);
+      border-left: 4px solid var(--green);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .source-ref {
+      margin-top: 24px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 10px;
+    }
+    footer {
+      padding: 16px 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11, 17, 32, 0.9);
+    }
+    .controls button {
+      background: var(--accent);
+      color: #0b1120;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-left: 8px;
+    }
+    .controls button:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="badge">LLM Wiki 教學簡報</span>
+    <span>使用鍵盤 ← / → 方向鍵或右下角按鈕切換頁面</span>
+  </header>
+
+  <main>
+    <!-- Slide 1 -->
+    <section class="slide active">
+      <span class="tag">第 1 頁 / 共 6 頁｜課程導覽</span>
+      <h1>睡眠科學與作息調整指南</h1>
+      <p>你是否常覺得「明明睡滿 8 小時，起床還是像沒睡飽」？關鍵往往不在於總時數，而在於<strong>睡眠結構</strong>與<strong>生理時鐘是否對齊</strong>。</p>
+      <ul>
+        <li><strong>適合對象：</strong>想改善晚睡、早上起不來或白天容易疲倦的初學者</li>
+        <li><strong>學習目標：</strong>理解 90 分鐘睡眠週期、光線與咖啡因的影響，並帶走一套可執行的調整步驟</li>
+        <li><strong>知識基礎：</strong>本簡報內容皆對應自建 LLM Wiki（條目 01～05）</li>
+      </ul>
+      <div class="source-ref">知識來源：Wiki 條目 01（睡眠週期基礎）、Wiki 條目 02（生理時鐘）</div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide">
+      <span class="tag">第 2 頁 / 共 6 頁｜睡眠結構</span>
+      <h2>每晚都在跑的 90 分鐘睡眠週期</h2>
+      <p>人類的睡眠是由多個約 <strong>90 分鐘</strong>的週期循環組成，一晚大約經歷 4～6 個週期，每個週期包含三個核心階段：</p>
+      <div class="grid-3">
+        <div class="box">
+          <h3>1. 淺層睡眠（N1/N2）</h3>
+          <p>占整晚約 50%，心率與體溫下降，幫助身體放鬆並初步整理資訊。</p>
+        </div>
+        <div class="box">
+          <h3>2. 深層睡眠（N3）</h3>
+          <p>集中於<strong>前半夜</strong>，負責分泌生長激素、修復身體組織與清除大腦廢物。</p>
+        </div>
+        <div class="box">
+          <h3>3. 快速動眼期（REM）</h3>
+          <p>集中於<strong>後半夜</strong>，大腦活躍整理記憶與情緒，是做夢的主要階段。</p>
+        </div>
+      </div>
+      <div class="highlight">小提醒：如果在「深層睡眠」階段被鬧鐘強行吵醒，會產生強烈的「睡眠慣性」，讓人感到頭昏沉重。</div>
+      <div class="source-ref">知識來源：Wiki 條目 01（睡眠週期基礎）</div>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide">
+      <span class="tag">第 3 頁 / 共 6 頁｜內在節律</span>
+      <h2>決定你想不想睡的「兩股力量」</h2>
+      <p>人體能否順利入睡，取決於「生理時鐘」與「睡眠驅動力」是否同時到位：</p>
+      <div class="grid-2">
+        <div class="box">
+          <h3>力量一：生理時鐘（光線校準）</h3>
+          <p>天黑後大腦分泌<strong>褪黑激素</strong>發出「準備睡覺」訊號；早晨照到陽光則會停止分泌，並啟動約 14～16 小時後的入睡倒數。</p>
+        </div>
+        <div class="box">
+          <h3>力量二：睡眠驅動力（腺苷累積）</h3>
+          <p>從醒來那一刻起，大腦會持續累積疲勞物質<strong>腺苷</strong>。清醒時間越長，腺苷越多，睡意就越強。</p>
+        </div>
+      </div>
+      <div class="source-ref">知識來源：Wiki 條目 02（生理時鐘與褪黑激素）</div>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide">
+      <span class="tag">第 4 頁 / 共 6 頁｜隱形干擾</span>
+      <h2>為什麼下午喝咖啡會影響半夜的睡眠品質？</h2>
+      <p>咖啡因並不會讓疲勞消失，它只是像「塞子」一樣暫時擋住大腦接收腺苷訊號；一旦咖啡因代謝完，累積的疲勞會一次反撲。</p>
+      <ul>
+        <li><strong>平均半衰期 5～7 小時：</strong>下午 4 點喝下 200 mg 咖啡因，到了晚上 10 點體內仍有約 100 mg 在作用。</li>
+        <li><strong>隱性睡眠剝奪：</strong>即使你覺得自己「喝咖啡照樣睡得著」，深層睡眠的比例仍會明顯下降。</li>
+        <li><strong>黃金法則：</strong>設定「咖啡因截止線」，在預計就寢前 <strong>8～10 小時</strong>停止攝取咖啡、濃茶與能量飲料。</li>
+      </ul>
+      <div class="source-ref">知識來源：Wiki 條目 03（咖啡因半衰期與攝取管理）</div>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide">
+      <span class="tag">第 5 頁 / 共 6 頁｜迷思破解</span>
+      <h2>三個最常見的睡眠誤區對照表</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>常見做法</th>
+            <th>為什麼反而傷睡眠？</th>
+            <th>正確替代方案</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>週末睡到中午補眠</td>
+            <td>造成「社交時差」，延後週日晚上的褪黑激素分泌</td>
+            <td>週末晚起不超過平日 1～1.5 小時</td>
+          </tr>
+          <tr>
+            <td>睡前小酌幫助入睡</td>
+            <td>酒精雖能快速鎮靜，但會破壞後半夜 REM 睡眠與導致微醒</td>
+            <td>睡前 3 小時內避免飲酒，改喝溫水或無咖啡因花草茶</td>
+          </tr>
+          <tr>
+            <td>睡不著躺床滑手機</td>
+            <td>藍光抑制褪黑激素，且大腦會把「床」與「清醒」連結</td>
+            <td>躺床超過 20 分鐘睡不著就起身看書，睏了再回床</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="source-ref">知識來源：Wiki 條目 04（常見睡眠誤區破解）</div>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide">
+      <span class="tag">第 6 頁 / 共 6 頁｜行動方案</span>
+      <h2>今天就能開始的 4 步驟作息調整儀式</h2>
+      <ul>
+        <li><strong>1. 起床後 30 分鐘內照自然光（10～15 分鐘）：</strong>幫生理時鐘按下「白天的開關」。</li>
+        <li><strong>2. 守住午後咖啡因與午睡界線：</strong>睡前 8 小時不碰咖啡因；午睡不超過 20～30 分鐘。</li>
+        <li><strong>3. 睡前 1 小時調暗燈光與降溫：</strong>臥室維持微涼的 18～22°C，幫助核心體溫下降。</li>
+        <li><strong>4. 優先固定「起床時間」：</strong>與其強迫自己提早躺床翻來覆去，不如每天固定時間起床，睡意自然會提前報到。</li>
+      </ul>
+      <div class="source-ref">知識來源：Wiki 條目 05（打造高品質睡眠的 4 步驟儀式）</div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="pageIndicator">第 1 / 6 頁</span>
+    <div class="controls">
+      <button id="prevBtn" onclick="changeSlide(-1)" disabled>上一頁</button>
+      <button id="nextBtn" onclick="changeSlide(1)">下一頁</button>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function render() {
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+      document.getElementById('pageIndicator').textContent = `第 ${current + 1} / ${slides.length} 頁`;
+      document.getElementById('prevBtn').disabled = current === 0;
+      document.getElementById('nextBtn').disabled = current === slides.length - 1;
+    }
+
+    function changeSlide(delta) {
+      current = Math.max(0, Math.min(slides.length - 1, current + delta));
+      render();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') changeSlide(1);
+      if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+  </script>
+</body>
+</html>
